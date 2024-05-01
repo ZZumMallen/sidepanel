@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "AG Helper",
+  "version": "2.0",
+  "description": "This is meant to contain tools needed to work with AG",
+  "permissions": ["sidePanel", "storage","scripting"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["/scripts/content.js"],
+      "css": ["/css/style.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "/scripts/background.js"
+  },
+  "action":{
+    "default_title": "AG Helper"
+  },
+  "host_permissions": ["<all_urls>"]
+
+}

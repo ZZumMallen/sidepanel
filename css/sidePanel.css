@@ -1,0 +1,291 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 0;
+}
+
+.nav-container{
+    display: flex;
+    background:black;
+    border-radius: 4px;
+    height: 4vh;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-linkBox {
+    display: flex;
+    flex-direction: row;
+    background: black;
+    border-radius: 10px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: auto;
+    font-size: 100%;
+}
+
+.nav-linkBox:hover {
+    color: #ea8e00;
+    font-weight: 600;
+    
+    
+}
+
+.nav-linkBox-text:hover{
+    transform: scale(110%);
+}
+
+.nav-linkBox:active{
+    transform: translateY(1px);
+    background: rgb(105, 1, 105);
+}
+
+
+/* Table Content */
+table{
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    overflow: hidden;
+    cursor: none;
+}
+
+table, th, td{
+    border: 1px solid;
+    border-collapse: collapse;
+    font-size: 0.95em;
+}
+
+td, th{
+    position: relative;
+    text-align: center;
+}
+
+.index-row{
+    font-weight: bold;
+}
+
+.table-notes{
+    display: block;
+    margin-left: 2.5%;
+}
+
+.subtitle{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.item, .low{
+    text-align: right;
+}
+
+.high{
+    text-align: left;
+}
+
+.percent{
+    text-align: center;
+}
+
+tr:hover {
+    background-color: #B0CB39;
+}
+
+td:hover {
+    background-color: #EA8E00;
+    font-weight: bold;
+ 
+}
+
+td:hover::before{
+    background: #B0CB39;
+    text-align: center;
+
+}
+
+td:hover::after {
+    background-color: #B0CB39;
+    content: '';
+    height: 10000px;
+    left: 0;
+    position: absolute;
+    top: -5000px;
+    width: 100%;
+    z-index: -1;
+}
+
+
+/* Notes items */
+.note-body{
+    display: block;
+    margin-left: 2.5%;
+
+}
+
+/* Expandable Section */
+.wrapper {
+    width: calc(100%-10px);
+    padding-right: 10px;
+
+}
+
+textarea {
+    width: 100%;
+}
+
+.expandable{
+    width: calc(100%-10px);
+    margin: 6px 0;
+    font-size: 16px;
+}
+
+.expandable--open .expandable__content-wrapper{
+    grid-template-rows: 1fr;
+}
+
+.expandable--open .expandable__content{
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.expandable--open .expandable__title-bar {
+    border-radius: 6px 6px 0 0;
+}
+
+.expandable__title-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px;
+    user-select: none;
+    background-color: #183c44;
+    color: white;
+    border-radius: 6px 6px 6px 6px;
+    transition: border-radius 0.3s ease-out;
+    
+    cursor: pointer;
+}
+
+.expandable__title{
+    font-weight: bold;
+}
+
+.expandable__content{
+    line-height: 1.4;
+    font-size: 0.85em;
+    min-width: 300px;
+    border: 1px solid lightgrey;
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    overflow: hidden;
+    padding-top: 0;
+    transition: padding-top 0.3s ease-out
+}
+
+.expandable__content-wrapper{
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease-out;
+}
+
+.expandable--open .chev-expander{
+    content: url(../icons/chevron-contract.svg);
+}
+
+.chev-expander{
+    content: url(../icons/chevron-expand.svg)
+}
+
+.stump-table{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    border: 1px solid;
+    
+}
+
+/* PC Table */
+.pc-table {
+    width: 100%;
+    overflow: hidden;
+}
+
+.demo{
+    background-color: white;
+}
+
+.box-wrapper, .about{
+    display: grid;
+    grid-template-rows: auto;
+    width: auto;
+    border: 1px solid;
+    margin-top: 10px;
+    background-color:dar;
+
+}
+
+.home-button-wrapper{
+    height: auto;
+    min-height: 75px;
+    border: 1px solid lightgray;
+    padding: 4px;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    
+}
+
+#box1{
+    grid-template-columns: none;
+}
+
+.home-button{
+    margin: 4px;
+    border: 1px solid black;
+    background-color: #ea8e00;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.home-button:hover{
+    background-color: #f8b367;
+    box-shadow: 0px 0px 10px 2px #f8b367;
+    
+}
+
+.home-button:active{
+    transform: translateY(1px);
+}
+
+.section-header-wrapper{
+    background-color: #183c44;
+    display: flex;
+    justify-content: space-around;
+    color: white
+}
+
+.section-header{
+    font-size: large;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+#about-text{
+    font-size: small;
+    text-indent: 5px;
+    color: black;
+    margin: 5px 0px 5px 10px; 
+    
+}
