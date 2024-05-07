@@ -8,6 +8,12 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (request.blaster === "blast") {
     const controlsElement = document.querySelector(".controls");
     controlsElement.classList.toggle("cal--change");
+
+    const currentState_gis = controlsElement.classList.contains("cal--change");
+
+    chrome.storage.local.set({"toggleState": currentState_gis}, function(){
+      console.log("Toggle state saved:", currentState_gis);
+    })
   }
 });
 	
@@ -26,4 +32,8 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   }
 })
 
-
+chrome.storage.local.get("toggleState", function(data){
+  if (data.toggleState){
+    document.querySelector(".controls").classList.add("cal--change");
+  }
+})
