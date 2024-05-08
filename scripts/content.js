@@ -6,6 +6,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       : "from the extension"
   );
   if (request.blaster === "blast") {
+    console.log("blasting commenced");
     const controlsElement = document.querySelector(".controls");
     controlsElement.classList.toggle("cal--change");
 
@@ -16,7 +17,12 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     })
   }
 });
-	
+
+chrome.storage.local.get("toggleState", function(data){
+  if (data.toggleState){
+    document.querySelector(".controls").classList.add("cal--change");
+  }
+})
 
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
@@ -26,14 +32,10 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       : "from the extension"
   );
   if (request.width === "wide") {
-    const controlsService = document.querySelector("#indexPage > modal-container > div > div > ag-job-site-details-modal > div.flo-modal-body > div > div > div > ag-plant-inv-batch\
-    > div > div.col-md-7 > ag-plant-inventory-list > div > kendo-grid > div > div > div > table > colgroup > col:nth-child(2)");
+    const controlsService = document.querySelector(
+      "#indexPage > modal-container > div > div > ag-job-site-details-modal > div.flo-modal-body > div > div > div > ag-plant-inv-batch\
+    > div > div.col-md-7 > ag-plant-inventory-list > div > kendo-grid > div > div > div > table > colgroup > col:nth-child(2)"
+    );
     controlsService.classList.toggle("new--width");
   }
-})
-
-chrome.storage.local.get("toggleState", function(data){
-  if (data.toggleState){
-    document.querySelector(".controls").classList.add("cal--change");
-  }
-})
+});
